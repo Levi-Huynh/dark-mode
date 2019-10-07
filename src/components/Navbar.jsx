@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useDarkMode from '../hooks/useDarkMode';
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useDarkMode();
+
+  console.log("darkmode state in Nav:", darkMode);
   const toggleMode = e => {
     e.preventDefault();
+    //THIS RIGHT HERE CHANGES EVERYTHING!
+    //THE OPPOSITE OF NULL= TRUE! :D YAY!
     setDarkMode(!darkMode);
   };
+
   return (
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
@@ -20,3 +26,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
